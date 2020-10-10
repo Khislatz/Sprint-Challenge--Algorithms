@@ -96,10 +96,46 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # We start by setting the light to on. This will indicate that the loop has began
+        self.set_light_on()
 
+        while self.light_is_on():
+            self.set_light_off()
 
+            # If the robot can move to the right because it is not at the end of the list
+            while self.can_move_right():
+                # We move right
+                self.move_right()
+
+                # We compare the item. If the item held is greater than the item infront of the robot
+                if self.compare_item() == 1:
+                    # We swap the item
+                    self.swap_item()
+                    # Then we turn on the light so the loop restarts
+                    self.set_light_on()
+
+            # The robot is able to move to the left once he reached the end of the array
+            while self.can_move_left():
+
+                # We swap the item
+                self.swap_item()
+                # We move to the left
+                self.move_left()
+
+                # We compare the items. If the item held is less than the one infront of him
+                if self.compare_item() == -1:
+                    # We swap items 
+                    self.swap_item()
+                    # Turn the light on to restart the loop
+                    self.set_light_on()
+
+                # Otherwise we'll move to the right
+                self.move_right()
+                # Swap the items
+                self.swap_item()
+                # After which move back on over to the left
+                self.move_left()
+                
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
