@@ -47,19 +47,19 @@ We could approach this problem using binary search algorithm. The first step is 
 ### Algorithm:
 
 ```python
-Determine the number of floors as an array
-get the lowest floor (intially assign to zero)
-get the highest floor (assign to the length of the array)
-keep repeating the steps below until the highest floor is less than or equal to the lowest floor:
-    find middle floor # such as (higher + lower ) // 2
-    throw an egg by decrementing the inventory by 1
-        middle_floor = (lower+higher)//2
-        throw an egg from the middle floor
-        if the egg broke:
-            set the middle floor's value as a new hightest floor
-        else:
-            set the middle floor's value as a new lowest floor 
-    return the floor value
+# Determine the number of floors as an array
+# get the lowest floor (intially assign to zero)
+# get the highest floor (assign to the length of the array)
+# keep repeating the steps below until the highest floor is less than or equal to the lowest floor:
+#     find middle floor such as (higher + lower ) // 2
+#     throw an egg by decrementing the inventory by 1
+#         middle_floor = (lower+higher)//2
+#         throw an egg from the middle floor
+#         if the egg broke:
+#             set the middle floor's value as a new hightest floor
+#         else:
+#             set the middle floor's value as a new lowest floor 
+#     return the floor value
 ```
 ### Time Complexity:
 
